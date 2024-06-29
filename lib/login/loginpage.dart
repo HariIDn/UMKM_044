@@ -74,24 +74,25 @@ class _LoginPageState extends State<LoginPage> {
                             children: [
                               TextSpan(
                                 text: 'UMKM',
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize:
-                                      16, // Adjust the font size as needed
-                                  letterSpacing: 0,
-                                  fontWeight:
-                                      FontWeight.bold, // Add weight if desired
-                                  // Add color if needed: color: Colors.blue,
-                                ),
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .headlineMedium!
+                                    .copyWith(
+                                      fontFamily: 'Outfit',
+                                      fontWeight: FontWeight.bold,
+                                      letterSpacing: 0,
+                                    ),
                               ),
                               TextSpan(
                                 text: 'Maps',
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  color: Theme.of(context).primaryColor,
-                                  fontSize: 14, // Adjust font size as needed
-                                  letterSpacing: 0,
-                                ),
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .headlineMedium!
+                                    .copyWith(
+                                        fontFamily: 'Outfit',
+                                        fontWeight: FontWeight.bold,
+                                        letterSpacing: 0,
+                                        color: Theme.of(context).primaryColor),
                               )
                             ],
                             style: TextStyle(
@@ -138,7 +139,10 @@ class _LoginPageState extends State<LoginPage> {
                               25), // Set the desired border radius
                         ),
                       ),
-                      child: const Text('Get Started'),
+                      child: const Text(
+                        'Get Started',
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
                     Column(
                       mainAxisSize: MainAxisSize.max,
@@ -154,6 +158,7 @@ class _LoginPageState extends State<LoginPage> {
                                     style: TextStyle(
                                       fontFamily: 'Plus Jakarta Sans',
                                       letterSpacing: 0,
+                                      color: Colors.black,
                                     )),
                                 TextSpan(
                                   text: 'Sign In',
@@ -162,6 +167,7 @@ class _LoginPageState extends State<LoginPage> {
                                     letterSpacing: 0,
                                     fontWeight: FontWeight.w600,
                                     decoration: TextDecoration.underline,
+                                    color: Theme.of(context).primaryColor,
                                   ),
                                 )
                               ],
