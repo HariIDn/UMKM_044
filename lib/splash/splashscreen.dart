@@ -1,5 +1,3 @@
-import 'package:umkm/home/homeview.dart';
-import 'package:umkm/login/login_model.dart';
 import 'package:flutter/material.dart';
 import 'package:umkm/login/loginpage.dart';
 import 'splash_model.dart';

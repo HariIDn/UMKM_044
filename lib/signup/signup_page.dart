@@ -1,10 +1,8 @@
 // Suggested code may be subject to a license. Learn more: ~LicenseLog:3349384012.
 import 'package:umkm/signup/signup_model.dart';
 
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});
@@ -265,7 +263,6 @@ class _SignUpPageState extends State<SignUpPage> {
                                 autofocus: false,
                                 autofillHints: [AutofillHints.newPassword],
                                 textInputAction: TextInputAction.done,
-                                
                                 decoration: InputDecoration(
                                   enabledBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
@@ -305,9 +302,8 @@ class _SignUpPageState extends State<SignUpPage> {
                                     onTap: () {},
                                     focusNode: FocusNode(skipTraversal: true),
                                     child: Icon(
-                                      
-                                           Icons.visibility_outlined,
-                                          
+                                      Icons.visibility_outlined,
+
                                       color: Theme.of(context)
                                           .colorScheme
                                           .onSecondary, //note for this
@@ -359,7 +355,10 @@ class _SignUpPageState extends State<SignUpPage> {
                         ),
                         elevation: 0,
                       ),
-                      child: const Text('Create Account', style: TextStyle(color: Colors.white),),
+                      child: const Text(
+                        'Create Account',
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
                   ),
                   Padding(
