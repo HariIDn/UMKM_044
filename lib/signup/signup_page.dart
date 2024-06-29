@@ -359,7 +359,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         ),
                         elevation: 0,
                       ),
-                      child: const Text('Create Account'),
+                      child: const Text('Create Account', style: TextStyle(color: Colors.white),),
                     ),
                   ),
                   Padding(
