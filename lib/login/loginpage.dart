@@ -1,88 +1,183 @@
+import 'package:umkm/home/homeview.dart';
+import 'package:umkm/login/login_model.dart';
 import 'package:flutter/material.dart';
+import 'login_model.dart';
+// Suggested code may be subject to a license. Learn more: ~LicenseLog:3512782153.
+// Suggested code may be subject to a license. Learn more: ~LicenseLog:2200586234.
+export 'login_model.dart';
 
 class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
+
   @override
-  _LoginPageState createState() => _LoginPageState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final _formKey = GlobalKey<FormState>();
-  String _email = '';
+  late LoginModel _model;
+
+  final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  @override
+  void initState() {
+    super.initState();
+    _model = LoginModel();
+  }
+
+  @override
+  void dispose() {
+    _model.dispose();
+
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Login'),
-      ),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Form(
-            key: _formKey,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(
-                  width: 300,
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      labelText: 'Email',
-                      prefixIcon: Icon(Icons.email),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20.0),
+    return GestureDetector(
+      onTap: () => _model.unfocusNode.canRequestFocus
+          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+          : FocusScope.of(context).unfocus(),
+      child: Scaffold(
+        key: scaffoldKey,
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        body: SafeArea(
+          top: true,
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Expanded(
+                child: Align(
+                  alignment: AlignmentDirectional(0, 0),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        width: 150,
+                        height: 150,
+                        decoration: BoxDecoration(
+                          color: Theme.of(context).primaryColor,
+                          image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: Image.network(
+                              'https://t-2.tstatic.net/makassar/foto/bank/images/masih-dibuka-cara-daftar-blt-umkm-dapatkan-bantuan-rp-24-juta-lengkapi-5-syarat-berikut.jpg',
+                            ).image,
+                          ),
+                          borderRadius: BorderRadius.circular(32),
+                        ),
                       ),
-                    ),
-                    validator: (value) {
-                      if (value!.isEmpty) {
-                        return 'Please enter your email';
-                      }
-                      return null;
-                    },
-                    onSaved: (value) {
-                      _email = value!;
-                    },
-                  ),
-                ),
-                const SizedBox(height: 16.0),
-                SizedBox(
-                  width: 300,
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      labelText: 'Password',
-                      prefixIcon: Icon(Icons.lock),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20.0),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
+                        child: RichText(
+                          textScaler: MediaQuery.of(context).textScaler,
+                          text: TextSpan(
+                            children: [
+                              TextSpan(
+                                text: 'UMKM',
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize:
+                                      16, // Adjust the font size as needed
+                                  letterSpacing: 0,
+                                  fontWeight:
+                                      FontWeight.bold, // Add weight if desired
+                                  // Add color if needed: color: Colors.blue,
+                                ),
+                              ),
+                              TextSpan(
+                                text: 'Maps',
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  color: Theme.of(context).primaryColor,
+                                  fontSize: 14, // Adjust font size as needed
+                                  letterSpacing: 0,
+                                ),
+                              )
+                            ],
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 32,
+                              letterSpacing: 0,
+                              fontWeight: FontWeight
+                                  .bold, // If 'displaySmall' was meant to be bold
+                            ),
+                          ),
+                        ),
                       ),
-                    ),
-                    obscureText: true,
-                    validator: (value) {
-                      if (value!.isEmpty) {
-                        return 'Please enter your password';
-                      }
-                      return null;
-                    },
+                    ],
                   ),
                 ),
-                const SizedBox(height: 24.0),
-                ElevatedButton(
-                  onPressed: () {
-                    if (_formKey.currentState!.validate()) {
-                      _formKey.currentState!.save();
-                      // Perform login with _email
-                    }
-                  },
-                  child: const Text('Login'),
-                  style: ElevatedButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 40.0, vertical: 16.0),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20.0),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(24, 0, 24, 12),
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    ElevatedButton(
+                      onPressed: () {
+                        print('Button pressed ...');
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Theme.of(context)
+                            .primaryColor, // Use your theme's primary color
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 0,
+                            vertical: 0), // Adjust padding as needed
+                        textStyle: TextStyle(
+                          fontFamily: 'Plus Jakarta Sans',
+                          letterSpacing: 0,
+                          fontSize: Theme.of(context)
+                              .textTheme
+                              .titleSmall
+                              ?.fontSize, // Match your theme's titleSmall size
+                        ),
+                        minimumSize:
+                            const Size.fromHeight(50), // Set the desired height
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(
+                              25), // Set the desired border radius
+                        ),
+                      ),
+                      child: const Text('Get Started'),
                     ),
-                  ),
+                    Column(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 24),
+                          child: RichText(
+                            textScaler: MediaQuery.of(context).textScaler,
+                            text: TextSpan(
+                              children: [
+                                TextSpan(
+                                    text: 'Already a member?  ',
+                                    style: TextStyle(
+                                      fontFamily: 'Plus Jakarta Sans',
+                                      letterSpacing: 0,
+                                    )),
+                                TextSpan(
+                                  text: 'Sign In',
+                                  style: TextStyle(
+                                    fontFamily: 'Plus Jakarta Sans',
+                                    letterSpacing: 0,
+                                    fontWeight: FontWeight.w600,
+                                    decoration: TextDecoration.underline,
+                                  ),
+                                )
+                              ],
+                              style: TextStyle(
+                                fontFamily: 'Plus Jakarta Sans',
+                                letterSpacing: 0,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
