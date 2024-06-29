@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-
-class LoginModel{
+class LoginModel {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
