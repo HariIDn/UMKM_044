@@ -46,14 +46,6 @@ class _SignUpPageState extends State<SignUpPage> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                AppBar(
-                  leading: IconButton(
-                    icon: Icon(Icons.arrow_back),
-                    onPressed: () {
-                      // Handle back button press
-                    },
-                  ),
-                ),
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
                   child: Text(
@@ -372,17 +364,18 @@ class _SignUpPageState extends State<SignUpPage> {
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            // ... your onTap logic here,
-                            // you'll need to adapt this if it depends on
-                            // richTextCompanyInformationRecord
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Loginpage()),
+                            );
                           },
                           child: RichText(
                             textScaler: MediaQuery.of(context).textScaler,
                             text: TextSpan(
                               children: [
                                 TextSpan(
-                                  text:
-                                      'By clicking \"Create Account,\" you agree to UMKMaps ',
+                                  text: "Already have an account? ",
                                   style: Theme.of(context)
                                       .textTheme
                                       .bodySmall!
@@ -392,7 +385,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                       ),
                                 ),
                                 TextSpan(
-                                  text: 'Terms of Use',
+                                  text: 'Sign In here',
                                   style: Theme.of(context)
                                       .textTheme
                                       .bodySmall!
