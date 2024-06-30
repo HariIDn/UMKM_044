@@ -55,8 +55,8 @@ class _SplashScreenState extends State<SplashScreen> {
                         color: Theme.of(context).primaryColor,
                         image: DecorationImage(
                           fit: BoxFit.cover,
-                          image: Image.network(
-                            'https://t-2.tstatic.net/makassar/foto/bank/images/masih-dibuka-cara-daftar-blt-umkm-dapatkan-bantuan-rp-24-juta-lengkapi-5-syarat-berikut.jpg',
+                          image: Image.asset(
+                            'assets/emblem.png',
                           ).image,
                         ),
                         borderRadius: BorderRadius.circular(32),
