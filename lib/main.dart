@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:umkm/home/homeview.dart';
 import 'package:umkm/signup/signup_page.dart';
 import 'package:umkm/splash/splashscreen.dart';
 
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: SplashScreen(),
+      home: HomeView(),
     );
   }
 }

@@ -7,7 +7,7 @@ class HomeFooter extends StatelessWidget {
   Widget build(BuildContext context) {
     return BottomAppBar(
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           IconButton(
             icon: const Icon(Icons.home),
@@ -15,6 +15,7 @@ class HomeFooter extends StatelessWidget {
               // Navigate to home screen
             },
           ),
+          VerticalDivider(thickness: 1,),
           IconButton(
             icon: const Icon(Icons.person),
             onPressed: () {
@@ -25,6 +26,7 @@ class HomeFooter extends StatelessWidget {
       ),
       color: Colors.grey[300],
       shape: const CircularNotchedRectangle(),
+      height: 65,
     );
   }
 }
