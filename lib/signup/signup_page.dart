@@ -338,7 +338,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Loginpage()),
+                          MaterialPageRoute(builder: (context) => LoginPage()),
                         );
                       },
                       child: const Text(
@@ -367,7 +367,7 @@ class _SignUpPageState extends State<SignUpPage> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => Loginpage()),
+                                  builder: (context) => LoginPage()),
                             );
                           },
                           child: RichText(
