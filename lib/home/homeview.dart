@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:umkm/home/widget/home_footer.dart';
+import 'package:umkm/page/detail_page.dart';
 import 'package:umkm/umkm/controller/umkm_controller.dart';
 
 class HomeView extends StatefulWidget {
@@ -36,7 +37,23 @@ class _HomeViewState extends State<HomeView> {
         ],
       ),
       body: ListView(
-        children: [],
+        children: [
+          InkWell(
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DetailPage(),
+                  ));
+            },
+            child: ListTile(
+              leading: Container(
+                decoration:
+                    BoxDecoration(borderRadius: BorderRadius.circular(12)),
+              ),
+            ),
+          ),
+        ],
       ),
       bottomNavigationBar: HomeFooter(),
     );

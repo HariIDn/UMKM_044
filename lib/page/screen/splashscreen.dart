@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:umkm/page/loginpage.dart';
+import 'package:umkm/page/login_page.dart';
 import 'package:umkm/page/signup_page.dart';
 import '../../splash/splash_model.dart';
 // Suggested code may be subject to a license. Learn more: ~LicenseLog:3512782153.
