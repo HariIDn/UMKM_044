@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:umkm/login/loginpage.dart';
-import 'package:umkm/signup/signup_page.dart';
-import 'splash_model.dart';
+import 'package:umkm/page/loginpage.dart';
+import 'package:umkm/page/signup_page.dart';
+import '../../splash/splash_model.dart';
 // Suggested code may be subject to a license. Learn more: ~LicenseLog:3512782153.
 // Suggested code may be subject to a license. Learn more: ~LicenseLog:2200586234.
-export 'splash_model.dart';
+export '../../splash/splash_model.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

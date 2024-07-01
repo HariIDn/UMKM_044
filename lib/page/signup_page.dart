@@ -1,5 +1,5 @@
 // Suggested code may be subject to a license. Learn more: ~LicenseLog:3349384012.
-import 'package:umkm/login/loginpage.dart';
+import 'package:umkm/page/loginpage.dart';
 import 'package:umkm/signup/signup_model.dart';
 
 import 'package:flutter/material.dart';

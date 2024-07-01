@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:umkm/home/homeview.dart';
-import 'package:umkm/signup/signup_page.dart';
-import 'package:umkm/splash/splashscreen.dart';
+import 'package:umkm/page/signup_page.dart';
+import 'package:umkm/page/screen/splashscreen.dart';
 
 void main() {
   runApp(const MyApp());
