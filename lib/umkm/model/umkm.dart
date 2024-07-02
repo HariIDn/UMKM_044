@@ -6,13 +6,13 @@ class UMKM {
   int? id;
   final String nama;
   final String deskripsi;
-  final String rating;
-  final File foto;
+  final String menu;
+  final String foto;
   UMKM({
     this.id,
     required this.nama,
     required this.deskripsi,
-    required this.rating,
+    required this.menu,
     required this.foto,
   });
 
@@ -20,14 +20,14 @@ class UMKM {
     int? id,
     String? nama,
     String? deskripsi,
-    String? rating,
-    File? foto,
+    String? menu,
+    String? foto,
   }) {
     return UMKM(
       id: id ?? this.id,
       nama: nama ?? this.nama,
       deskripsi: deskripsi ?? this.deskripsi,
-      rating: rating ?? this.rating,
+      menu: menu ?? this.menu,
       foto: foto ?? this.foto,
     );
   }
@@ -37,8 +37,8 @@ class UMKM {
       'id': id,
       'nama': nama,
       'deskripsi': deskripsi,
-      'rating': rating,
-      'foto': foto.path,
+      'menu': menu,
+      'foto': foto,
     };
   }
 
@@ -47,8 +47,8 @@ class UMKM {
       id: map['id'] != null ? map['id'] as int : null,
       nama: map['nama'] as String,
       deskripsi: map['deskripsi'] as String,
-      rating: map['rating'] as String,
-      foto: map['foto'] != null ? File(map['foto']) : File(''),
+      menu: map['menu'] as String,
+      foto: map['foto'] as String,
     );
   }
 
@@ -59,7 +59,7 @@ class UMKM {
 
   @override
   String toString() {
-    return 'UMKM(id: $id, nama: $nama, deskripsi: $deskripsi, rating: $rating, foto: $foto)';
+    return 'UMKM(id: $id, nama: $nama, deskripsi: $deskripsi, menu: $menu, foto: $foto)';
   }
 
   @override
@@ -69,7 +69,7 @@ class UMKM {
     return other.id == id &&
         other.nama == nama &&
         other.deskripsi == deskripsi &&
-        other.rating == rating &&
+        other.menu == menu &&
         other.foto == foto;
   }
 
@@ -78,7 +78,7 @@ class UMKM {
     return id.hashCode ^
         nama.hashCode ^
         deskripsi.hashCode ^
-        rating.hashCode ^
+        menu.hashCode ^
         foto.hashCode;
   }
 }
