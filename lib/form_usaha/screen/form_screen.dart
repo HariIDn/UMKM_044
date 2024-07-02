@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:umkm/form/widget/form_body.dart';
-import 'package:umkm/form/widget/form_footer.dart';
+import 'package:umkm/form_usaha/widget/form_body.dart';
+import 'package:umkm/form_usaha/widget/form_footer.dart';
 
 class FormScreen extends StatefulWidget {
   const FormScreen({super.key});

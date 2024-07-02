@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:umkm/form/screen/form_screen.dart';
-import 'package:umkm/home/homeview.dart';
-import 'package:umkm/page/detail_page.dart';
-import 'package:umkm/page/screen/splashscreen.dart';
-import 'package:umkm/profile/profileview.dart';
-import 'package:umkm/profile/pu_profileview.dart';
+import 'package:umkm/form_usaha/screen/form_screen.dart';
 
 void main() {
   runApp(const MyApp());

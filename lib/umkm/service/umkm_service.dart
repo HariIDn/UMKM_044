@@ -4,7 +4,7 @@ import 'dart:io';
 import 'package:http/http.dart' as http;
 
 class UMKMService {
-  final String baseUrl = 'http://10.0.2.2/dbapi/';
+  final String baseUrl = 'http://10.0.2.2';
   final String endpoint = 'db.php';
 
   Uri getUri(String path) {
