@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:umkm/form_usaha/screen/form_screen.dart';
+import 'package:umkm/menu/screen/menu_screen.dart';
+import 'package:umkm/profile/pu_profileview.dart';
+import 'package:umkm/splash/screen/splashscreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,10 +16,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
         useMaterial3: true,
       ),
-      home: FormScreen(),
+      home: PUProfileView(),
     );
   }
 }

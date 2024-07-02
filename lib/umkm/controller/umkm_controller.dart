@@ -5,8 +5,8 @@ class UMKMController {
   final umkmservices = UMKMService();
   Future<List<UMKM>> getPlace() async {
     try {
-      List<dynamic> placeData = await umkmservices.fetchUMKM();
-      List<UMKM> place = placeData.map((json) => UMKM.fromMap(json)).toList();
+      List<dynamic> placeData = await umkmservices.getUMKM();
+      List<UMKM> place = placeData.map((item) => UMKM.fromJson(item)).toList();
       return place;
     } catch (e) {
       print(e);

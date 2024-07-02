@@ -16,13 +16,13 @@ class UMKM {
     required this.foto,
   });
 
-  factory UMKM.fromMap(Map<String, dynamic> map) {
+  factory UMKM.fromJson(Map<String, dynamic> json) {
     return UMKM(
-      id: map['id'] != null ? map['id'] as int : null,
-      nama: map['nama'] as String,
-      deskripsi: map['deskripsi'] as String,
-      menu: map['menu'] as String,
-      foto: map['foto'] as String,
+      id: json['id'],
+      nama: json['nama'],
+      deskripsi: json['deskripsi'],
+      menu: json['menu'],
+      foto: json['foto'],
     );
   }
 }

@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-import '../../maps/maps_screen.dart';
+import '../../../maps/maps_screen.dart';
 
-class FormBody extends StatefulWidget {
-  const FormBody({super.key});
+class UsahaBody extends StatefulWidget {
+  const UsahaBody({super.key});
 
   @override
-  State<FormBody> createState() => _FormBodyState();
+  State<UsahaBody> createState() => _UsahaBodyState();
 }
 
-class _FormBodyState extends State<FormBody> {
+class _UsahaBodyState extends State<UsahaBody> {
   final _formKey = GlobalKey<FormState>();
 
   String? _alamat;

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:umkm/profile/pu_profileview.dart';
 
-class FormFooter extends StatelessWidget {
-  const FormFooter({super.key});
+class UsahaFooter extends StatelessWidget {
+  const UsahaFooter({super.key});
 
   @override
   Widget build(BuildContext context) {

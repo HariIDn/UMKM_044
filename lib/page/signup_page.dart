@@ -33,7 +33,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
                   child: Text(
-                    'Create an account',
+                    'Buat Akun',
                     style: Theme.of(context).textTheme.displaySmall!.copyWith(
                           fontFamily: 'Outfit',
                           letterSpacing: 0,
@@ -55,7 +55,7 @@ class _SignUpPageState extends State<SignUpPage> {
                               padding:
                                   EdgeInsetsDirectional.fromSTEB(0, 0, 0, 4),
                               child: Text(
-                                'Full Name',
+                                'Nama',
                                 style: Theme.of(context)
                                     .textTheme
                                     .bodyMedium!
@@ -325,7 +325,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         );
                       },
                       child: const Text(
-                        'Create Account',
+                        'Submit',
                         style: TextStyle(color: Colors.white),
                       ),
                     ),
@@ -358,7 +358,7 @@ class _SignUpPageState extends State<SignUpPage> {
                             text: TextSpan(
                               children: [
                                 TextSpan(
-                                  text: "Already have an account? ",
+                                  text: "Sudah Punya Akun? ",
                                   style: Theme.of(context)
                                       .textTheme
                                       .bodySmall!
@@ -368,7 +368,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                       ),
                                 ),
                                 TextSpan(
-                                  text: 'Sign In here',
+                                  text: 'Log In disini',
                                   style: Theme.of(context)
                                       .textTheme
                                       .bodySmall!

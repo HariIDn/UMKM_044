@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:umkm/form_usaha/widget/form_body.dart';
-import 'package:umkm/form_usaha/widget/form_footer.dart';
+import 'package:umkm/form/usaha/widget/usaha_body.dart';
+import 'package:umkm/form/usaha/widget/usaha_footer.dart';
 
-class FormScreen extends StatefulWidget {
-  const FormScreen({super.key});
+class FormUsaha extends StatefulWidget {
+  const FormUsaha({super.key});
 
   @override
-  State<FormScreen> createState() => _FormScreenState();
+  State<FormUsaha> createState() => _FormUsahaState();
 }
 
-class _FormScreenState extends State<FormScreen> {
+class _FormUsahaState extends State<FormUsaha> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +29,7 @@ class _FormScreenState extends State<FormScreen> {
             )),
       ),
       body: Column(
-        children: [FormBody(), FormFooter()],
+        children: [UsahaBody(), UsahaFooter()],
       ),
     );
   }

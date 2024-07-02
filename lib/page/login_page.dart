@@ -34,7 +34,7 @@ class _LoginPageState extends State<LoginPage> {
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
                       child: Text(
-                        'Sign In',
+                        'Log In',
                         style:
                             Theme.of(context).textTheme.displaySmall!.copyWith(
                                   fontFamily: 'Outfit',
@@ -252,7 +252,7 @@ class _LoginPageState extends State<LoginPage> {
                           elevation: 0,
                         ),
                         child: const Text(
-                          'Sign In',
+                          'Log In',
                           style: TextStyle(color: Colors.white),
                         ),
                       ),
@@ -282,7 +282,7 @@ class _LoginPageState extends State<LoginPage> {
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 12),
                         child: Text(
-                          'Don\'t have an account yet?',
+                          'Masih Belum Punya Akun?',
                           style:
                               Theme.of(context).textTheme.labelLarge!.copyWith(
                                     fontFamily: 'Outfit',
@@ -292,10 +292,11 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       ElevatedButton(
                         onPressed: () {
-                          Navigator.push(
+                          Navigator.pushAndRemoveUntil(
                             context,
                             MaterialPageRoute(
                                 builder: (context) => SignUpPage()),
+                            (route) => false,
                           );
                         },
                         style: ElevatedButton.styleFrom(
@@ -320,7 +321,7 @@ class _LoginPageState extends State<LoginPage> {
                             borderRadius: BorderRadius.circular(25),
                           ),
                         ),
-                        child: const Text('Create Account'),
+                        child: const Text('Buat Akun'),
                       ),
                     ],
                   ),

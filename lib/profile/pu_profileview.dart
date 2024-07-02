@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:umkm/form/usaha/screen/form_usaha.dart';
 import 'package:umkm/home/widget/home_footer.dart';
 
+import '../menu/screen/menu_screen.dart';
 import '../page/login_page.dart';
 
 class PUProfileView extends StatefulWidget {
@@ -88,22 +90,29 @@ class _PUProfileViewState extends State<PUProfileView> {
                 ),
                 child: Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(16, 0, 4, 0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Edit Usaha',
-                        style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                              fontFamily: 'Plus Jakarta Sans',
-                              color: Color(0xFF14181B),
-                              fontSize: 16,
-                              letterSpacing: 0,
-                              fontWeight: FontWeight.normal,
-                            ),
-                      ),
-                      Icon(Icons.arrow_forward_ios)
-                    ],
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => FormUsaha()));
+                    },
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Edit Usaha',
+                          style:
+                              Theme.of(context).textTheme.bodyLarge!.copyWith(
+                                    fontFamily: 'Plus Jakarta Sans',
+                                    color: Color(0xFF14181B),
+                                    fontSize: 16,
+                                    letterSpacing: 0,
+                                    fontWeight: FontWeight.normal,
+                                  ),
+                        ),
+                        Icon(Icons.arrow_forward_ios)
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -140,22 +149,31 @@ class _PUProfileViewState extends State<PUProfileView> {
                 ),
                 child: Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(16, 0, 4, 0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Edit Menu',
-                        style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                              fontFamily: 'Plus Jakarta Sans',
-                              color: Color(0xFF14181B),
-                              fontSize: 16,
-                              letterSpacing: 0,
-                              fontWeight: FontWeight.normal,
-                            ),
-                      ),
-                      Icon(Icons.arrow_forward_ios)
-                    ],
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => MenuScreen()));
+                    },
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Edit Menu',
+                          style:
+                              Theme.of(context).textTheme.bodyLarge!.copyWith(
+                                    fontFamily: 'Plus Jakarta Sans',
+                                    color: Color(0xFF14181B),
+                                    fontSize: 16,
+                                    letterSpacing: 0,
+                                    fontWeight: FontWeight.normal,
+                                  ),
+                        ),
+                        Icon(Icons.arrow_forward_ios)
+                      ],
+                    ),
                   ),
                 ),
               ),
