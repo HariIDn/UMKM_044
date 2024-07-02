@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:umkm/home/homeview.dart';
-import 'package:umkm/page/signup_page.dart';
+import 'package:umkm/page/detail_page.dart';
 import 'package:umkm/page/screen/splashscreen.dart';
-import 'package:umkm/page/widget/tab_widget.dart';
+import 'package:umkm/profile/profileview.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,6 +11,7 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: TabWidget(),
+      home: SplashScreen(),
     );
   }
 }

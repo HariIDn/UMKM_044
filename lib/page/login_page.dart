@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:umkm/home/homeview.dart';
 import 'package:umkm/page/signup_page.dart';
 
 class LoginPage extends StatefulWidget {
@@ -223,7 +224,11 @@ class _LoginPageState extends State<LoginPage> {
                       padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
                       child: ElevatedButton(
                         onPressed: () {
-                          // Add your sign-in logic here
+                          Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(builder: (context) => HomeView()),
+                            (route) => false,
+                          );
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Theme.of(context)

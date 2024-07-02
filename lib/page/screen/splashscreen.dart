@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:umkm/page/login_page.dart';
 import 'package:umkm/page/signup_page.dart';
-import '../../splash/splash_model.dart';
+
 // Suggested code may be subject to a license. Learn more: ~LicenseLog:3512782153.
 // Suggested code may be subject to a license. Learn more: ~LicenseLog:2200586234.
-export '../../splash/splash_model.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -14,22 +13,7 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  late LoginModel _model;
-
   final scaffoldKey = GlobalKey<ScaffoldState>();
-
-  @override
-  void initState() {
-    super.initState();
-    _model = LoginModel();
-  }
-
-  @override
-  void dispose() {
-    _model.dispose();
-
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -113,6 +97,10 @@ class _SplashScreenState extends State<SplashScreen> {
                   ElevatedButton(
                     onPressed: () {
                       print('Button pressed ...');
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => SignUpPage()),
+                      );
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Theme.of(context)
@@ -135,17 +123,9 @@ class _SplashScreenState extends State<SplashScreen> {
                             25), // Set the desired border radius
                       ),
                     ),
-                    child: InkWell(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => SignUpPage()),
-                        );
-                      },
-                      child: const Text(
-                        'Get Started',
-                        style: TextStyle(color: Colors.white),
-                      ),
+                    child: const Text(
+                      'Get Started',
+                      style: TextStyle(color: Colors.white),
                     ),
                   ),
                   Column(

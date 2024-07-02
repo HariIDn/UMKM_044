@@ -1,6 +1,5 @@
 // Suggested code may be subject to a license. Learn more: ~LicenseLog:3349384012.
 import 'package:umkm/page/login_page.dart';
-import 'package:umkm/signup/signup_model.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -13,22 +12,7 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
-  late SignupModel _model;
-
   final scaffoldKey = GlobalKey<ScaffoldState>();
-
-  @override
-  void initState() {
-    super.initState();
-    _model = SignupModel();
-  }
-
-  @override
-  void dispose() {
-    _model.dispose();
-
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +41,6 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                 ),
                 Form(
-                  key: _model.formKey,
                   autovalidateMode: AutovalidateMode.disabled,
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
