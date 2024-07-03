@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../../page/signup_page.dart';
+import 'package:umkm/form/signup/screen/form_signup.dart';
 
 class LoginFooter extends StatelessWidget {
   const LoginFooter({super.key});
@@ -39,7 +38,7 @@ class LoginFooter extends StatelessWidget {
                 onPressed: () {
                   Navigator.pushAndRemoveUntil(
                     context,
-                    MaterialPageRoute(builder: (context) => SignUpPage()),
+                    MaterialPageRoute(builder: (context) => FormSignup()),
                     (route) => false,
                   );
                 },

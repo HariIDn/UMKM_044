@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:umkm/profile/pu_profileview.dart';
+import 'package:umkm/profile/view/pu_profileview.dart';
 
 class UsahaFooter extends StatelessWidget {
   const UsahaFooter({super.key});

@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:umkm/form/usaha/screen/form_usaha.dart';
-import 'package:umkm/menu/screen/menu_screen.dart';
-import 'package:umkm/detail/page/detail_page.dart';
-import 'package:umkm/page/login_page.dart';
-import 'package:umkm/page/signup_page.dart';
-import 'package:umkm/profile/pu_profileview.dart';
-import 'package:umkm/splash/screen/splashscreen.dart';
+import 'package:umkm/profile/view/profileview.dart';
+import 'package:umkm/profile/view/pu_profileview.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,7 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
         useMaterial3: true,
       ),
-      home: DetailPage(),
+      home: PUProfileView(),
     );
   }
 }

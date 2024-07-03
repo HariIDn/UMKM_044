@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../../page/login_page.dart';
+import 'package:umkm/form/login/screen/form_login.dart';
 
 class SingupFooter extends StatelessWidget {
   const SingupFooter({super.key});
@@ -37,7 +36,7 @@ class SingupFooter extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => LoginPage()),
+                  MaterialPageRoute(builder: (context) => FormLogin()),
                 );
               },
               child: const Text(
@@ -65,7 +64,7 @@ class SingupFooter extends StatelessWidget {
                   onTap: () async {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => LoginPage()),
+                      MaterialPageRoute(builder: (context) => FormLogin()),
                     );
                   },
                   child: RichText(

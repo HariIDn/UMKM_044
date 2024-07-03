@@ -14,28 +14,30 @@ class FormLogin extends StatefulWidget {
 class _FormLoginState extends State<FormLogin> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      top: true,
-      child: Column(
-        mainAxisSize: MainAxisSize.max,
-        children: [
-          Expanded(
-            child: Padding(
-              padding: EdgeInsets.all(24),
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  LoginHead(),
-                  LoginBody(),
-                ],
+    return Scaffold(
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        body: SafeArea(
+          top: true,
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Expanded(
+                child: Padding(
+                  padding: EdgeInsets.all(24),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      LoginHead(),
+                      LoginBody(),
+                    ],
+                  ),
+                ),
               ),
-            ),
+              LoginFooter()
+            ],
           ),
-          LoginFooter()
-        ],
-      ),
-    );
+        ));
   }
 }

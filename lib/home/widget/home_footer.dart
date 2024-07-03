@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:umkm/home/homeview.dart';
-import 'package:umkm/profile/profileview.dart';
+import 'package:umkm/profile/view/profileview.dart';
 
 class HomeFooter extends StatelessWidget {
   const HomeFooter({Key? key}) : super(key: key);

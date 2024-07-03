@@ -14,24 +14,26 @@ class FormSignup extends StatefulWidget {
 class _FormSignupState extends State<FormSignup> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      top: true,
-      child: Align(
-        alignment: AlignmentDirectional(0, 0),
-        child: Padding(
-          padding: EdgeInsets.all(24),
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SignupHead(),
-              SignupBody(),
-              SingupFooter(),
-            ],
+    return Scaffold(
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        body: SafeArea(
+          top: true,
+          child: Align(
+            alignment: AlignmentDirectional(0, 0),
+            child: Padding(
+              padding: EdgeInsets.all(24),
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SignupHead(),
+                  SignupBody(),
+                  SingupFooter(),
+                ],
+              ),
+            ),
           ),
-        ),
-      ),
-    );
+        ));
   }
 }

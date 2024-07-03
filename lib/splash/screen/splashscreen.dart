@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:umkm/page/login_page.dart';
-import 'package:umkm/page/signup_page.dart';
+import 'package:umkm/form/login/screen/form_login.dart';
+import 'package:umkm/form/signup/screen/form_signup.dart';
 
 // Suggested code may be subject to a license. Learn more: ~LicenseLog:3512782153.
 // Suggested code may be subject to a license. Learn more: ~LicenseLog:2200586234.
@@ -99,7 +99,7 @@ class _SplashScreenState extends State<SplashScreen> {
                       print('Button pressed ...');
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => SignUpPage()),
+                        MaterialPageRoute(builder: (context) => FormSignup()),
                       );
                     },
                     style: ElevatedButton.styleFrom(
@@ -138,7 +138,7 @@ class _SplashScreenState extends State<SplashScreen> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => LoginPage()),
+                                  builder: (context) => FormLogin()),
                             );
                           },
                           child: RichText(
