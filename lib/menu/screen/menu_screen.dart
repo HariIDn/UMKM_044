@@ -12,6 +12,21 @@ class _MenuScreenState extends State<MenuScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          'Menu Usaha',
+          style: TextStyle(color: Colors.white),
+        ),
+        backgroundColor: Colors.green,
+        leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(
+              Icons.arrow_back,
+              color: Colors.white,
+            )),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(

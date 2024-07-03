@@ -5,6 +5,33 @@ class MenuBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Form(
+      child: Padding(
+        padding: const EdgeInsets.all(18.0),
+        child: Column(
+          children: [
+            Container(
+              child: TextFormField(
+                decoration: InputDecoration(
+                  labelText: 'Nama',
+                  hintText: 'Masukan Nama Menu Anda',
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 18,
+            ),
+            Container(
+              child: TextFormField(
+                decoration: InputDecoration(
+                  labelText: 'Harga',
+                  hintText: 'Masukan Harga',
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

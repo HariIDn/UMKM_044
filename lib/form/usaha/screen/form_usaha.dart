@@ -29,7 +29,10 @@ class _FormUsahaState extends State<FormUsaha> {
             )),
       ),
       body: Column(
-        children: [UsahaBody(), UsahaFooter()],
+        children: [
+          UsahaBody(),
+          UsahaFooter(),
+        ],
       ),
     );
   }

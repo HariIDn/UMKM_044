@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:umkm/form/usaha/screen/form_usaha.dart';
 import 'package:umkm/menu/screen/menu_screen.dart';
+import 'package:umkm/page/detail_page.dart';
 import 'package:umkm/profile/pu_profileview.dart';
 import 'package:umkm/splash/screen/splashscreen.dart';
 
@@ -19,7 +21,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
         useMaterial3: true,
       ),
-      home: PUProfileView(),
+      home: MenuScreen(),
     );
   }
 }
