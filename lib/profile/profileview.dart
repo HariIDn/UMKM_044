@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:umkm/home/widget/home_footer.dart';
 import 'package:umkm/page/login_page.dart';
 
+import '../form/usaha/screen/form_usaha.dart';
+
 class ProfileView extends StatefulWidget {
   const ProfileView({super.key});
 
@@ -87,22 +89,29 @@ class _ProfileViewState extends State<ProfileView> {
                 ),
                 child: Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(16, 0, 4, 0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Tambah Usaha',
-                        style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                              fontFamily: 'Plus Jakarta Sans',
-                              color: Color(0xFF14181B),
-                              fontSize: 16,
-                              letterSpacing: 0,
-                              fontWeight: FontWeight.normal,
-                            ),
-                      ),
-                      Icon(Icons.arrow_forward_ios)
-                    ],
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => FormUsaha()));
+                    },
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Tambah Usaha',
+                          style:
+                              Theme.of(context).textTheme.bodyLarge!.copyWith(
+                                    fontFamily: 'Plus Jakarta Sans',
+                                    color: Color(0xFF14181B),
+                                    fontSize: 16,
+                                    letterSpacing: 0,
+                                    fontWeight: FontWeight.normal,
+                                  ),
+                        ),
+                        Icon(Icons.arrow_forward_ios)
+                      ],
+                    ),
                   ),
                 ),
               ),
