@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:umkm/home/widget/home_footer.dart';
 import 'package:umkm/home/widget/home_head.dart';
-import 'package:umkm/page/detail_page.dart';
+import 'package:umkm/detail/page/detail_page.dart';
 import 'package:umkm/umkm/controller/umkm_controller.dart';
 import 'package:umkm/umkm/model/umkm.dart';
 
