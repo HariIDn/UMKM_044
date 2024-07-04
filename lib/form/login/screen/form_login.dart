@@ -31,11 +31,14 @@ class _FormLoginState extends State<FormLogin> {
                     children: [
                       LoginHead(),
                       LoginBody(),
+                      SizedBox(
+                        height: 25,
+                      ),
+                      LoginFooter(),
                     ],
                   ),
                 ),
               ),
-              LoginFooter()
             ],
           ),
         ));

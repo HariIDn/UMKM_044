@@ -1,4 +1,11 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'package:umkm/form/login/screen/form_login.dart';
+import 'package:umkm/umkm/controller/signup_controller.dart';
+import 'package:umkm/umkm/model/user.dart';
+import 'package:umkm/umkm/service/umkm_service.dart';
 
 class SignupBody extends StatefulWidget {
   const SignupBody({super.key});
@@ -8,9 +15,15 @@ class SignupBody extends StatefulWidget {
 }
 
 class _SignupBodyState extends State<SignupBody> {
+  final _formKey = GlobalKey<FormState>();
+  final TextEditingController _namaController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Form(
+      key: _formKey,
       autovalidateMode: AutovalidateMode.disabled,
       child: Column(
         mainAxisSize: MainAxisSize.max,
@@ -32,6 +45,7 @@ class _SignupBodyState extends State<SignupBody> {
                   ),
                 ),
                 TextFormField(
+                  controller: _namaController,
                   autofocus: false,
                   autofillHints: [AutofillHints.name],
                   textCapitalization: TextCapitalization.words,
@@ -105,6 +119,7 @@ class _SignupBodyState extends State<SignupBody> {
                   ),
                 ),
                 TextFormField(
+                  controller: _emailController,
                   autofocus: false,
                   autofillHints: [AutofillHints.email],
                   textInputAction: TextInputAction.next,
@@ -172,9 +187,11 @@ class _SignupBodyState extends State<SignupBody> {
                   ),
                 ),
                 TextFormField(
+                  controller: _passwordController,
                   autofocus: false,
                   autofillHints: [AutofillHints.newPassword],
                   textInputAction: TextInputAction.done,
+                  obscureText: true,
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
@@ -229,6 +246,52 @@ class _SignupBodyState extends State<SignupBody> {
                   cursorColor: Theme.of(context).primaryColor,
                 ),
               ],
+            ),
+          ),
+          Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
+            child: ElevatedButton(
+              onPressed: () async {
+                if (_formKey.currentState!.validate()) {
+                  var result = await SignupController().signup(User(
+                    nama: _namaController.text,
+                    pass: _passwordController.text,
+                    email: _emailController.text,
+                  ));
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text("Pendaftaran Berhasil")),
+                  );
+                  Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => FormLogin(),
+                      ),
+                      (route) => false);
+                }
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Theme.of(context)
+                    .primaryColor, // Use your theme's primary color
+                textStyle: TextStyle(
+                  fontFamily: 'Plus Jakarta Sans',
+                  letterSpacing: 0,
+                ),
+                padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+                minimumSize:
+                    const Size.fromHeight(50), // Set the desired height
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(25),
+                  side: const BorderSide(
+                    color: Colors.transparent,
+                    width: 1,
+                  ),
+                ),
+                elevation: 0,
+              ),
+              child: const Text(
+                'Submit',
+                style: TextStyle(color: Colors.white),
+              ),
             ),
           ),
         ],

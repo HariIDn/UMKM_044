@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:umkm/umkm/controller/login_controller.dart';
+import 'package:umkm/umkm/service/login_service.dart';
 
 import '../../../home/homeview.dart';
+import '../../../umkm/model/user.dart';
 
 class LoginBody extends StatefulWidget {
   const LoginBody({super.key});
@@ -10,9 +13,26 @@ class LoginBody extends StatefulWidget {
 }
 
 class _LoginBodyState extends State<LoginBody> {
+  final _formKey = GlobalKey<FormState>();
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final loginController = LoginController();
+  final logService = LoginService();
+
+  Future<void> _login() async {
+    if (_formKey.currentState!.validate()) {
+      await loginController.login(
+        context,
+        _emailController.text,
+        _passwordController.text,
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Form(
+      key: _formKey,
       autovalidateMode: AutovalidateMode.disabled,
       child: Column(
         mainAxisSize: MainAxisSize.max,
@@ -35,6 +55,7 @@ class _LoginBodyState extends State<LoginBody> {
                   ),
                 ),
                 TextFormField(
+                  controller: _emailController,
                   autofocus: false,
                   autofillHints: [AutofillHints.email],
                   textInputAction: TextInputAction.next,
@@ -103,9 +124,11 @@ class _LoginBodyState extends State<LoginBody> {
                   ),
                 ),
                 TextFormField(
+                  controller: _passwordController,
                   autofocus: false,
                   autofillHints: [AutofillHints.newPassword],
                   textInputAction: TextInputAction.done,
+                  obscureText: true,
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
@@ -161,13 +184,7 @@ class _LoginBodyState extends State<LoginBody> {
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
                   child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.pushAndRemoveUntil(
-                        context,
-                        MaterialPageRoute(builder: (context) => HomeView()),
-                        (route) => false,
-                      );
-                    },
+                    onPressed: _login,
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Theme.of(context)
                           .primaryColor, // Use your theme's primary color

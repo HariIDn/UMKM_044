@@ -9,44 +9,6 @@ class SingupFooter extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
-          child: ElevatedButton(
-            onPressed: () async {
-              // Add your onPressed logic here
-            },
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Theme.of(context)
-                  .primaryColor, // Use your theme's primary color
-              textStyle: TextStyle(
-                fontFamily: 'Plus Jakarta Sans',
-                letterSpacing: 0,
-              ),
-              padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
-              minimumSize: const Size.fromHeight(50), // Set the desired height
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(25),
-                side: const BorderSide(
-                  color: Colors.transparent,
-                  width: 1,
-                ),
-              ),
-              elevation: 0,
-            ),
-            child: InkWell(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => FormLogin()),
-                );
-              },
-              child: const Text(
-                'Submit',
-                style: TextStyle(color: Colors.white),
-              ),
-            ),
-          ),
-        ),
-        Padding(
           padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
           child: Row(
             mainAxisSize: MainAxisSize.max,

@@ -3,13 +3,14 @@ import 'package:umkm/umkm/service/umkm_service.dart';
 
 class UMKMController {
   final umkmservices = UMKMService();
-  Future<List<UMKM>> getPlace() async {
+  Future<List<UMKM>> getUMKM() async {
     try {
-      List<dynamic> placeData = await umkmservices.getUMKM();
-      List<UMKM> place = placeData.map((item) => UMKM.fromJson(item)).toList();
+      List<dynamic> umkmData = await umkmservices.fetchUMKM();
+      List<UMKM> place = umkmData.map((json) => UMKM.fromJson(json)).toList();
       return place;
     } catch (e) {
       print(e);
+
       throw Exception("Gagal mengambil data");
     }
   }
